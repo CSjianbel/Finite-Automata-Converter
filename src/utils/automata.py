@@ -1,7 +1,7 @@
 
 class Automata: 
 
-    def __init__(self, states: list[str], alphabet: list[str], transition_table: dict, start: str, final_states: list[str]) -> None:
+    def __init__(self, states: set[str], alphabet: set[str], transition_table: dict, start: str, final_states: set[str]) -> None:
         self.states = states
         self.alphabet = alphabet
         self.transition_table = transition_table
