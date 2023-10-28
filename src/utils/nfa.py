@@ -7,5 +7,19 @@ class NFA(Automata):
         # delta(q, a) = {s_1, s_2, ... s_n}
         self.transitions = transitions
 
+    def delta(self, q: str, a: str):
+        return self.transitions[q][a]
+
+    def is_in_language(self, input: str):
+        active_states = {self.start}
+
+        for symbol in input: 
+            tmp = {}
+            for state in active_states:
+                tmp.union(self.delta(state, symbol))
+            active_states = tmp
+
+        return self.final_states in active_states 
+
     def __str__(self):
         return super.__str__() + f'\n\nTransitions: {self.transitions}'
