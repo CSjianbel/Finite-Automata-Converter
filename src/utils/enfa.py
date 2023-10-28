@@ -1,4 +1,4 @@
-import NFA
+from nfa import NFA 
 
 class eNFA(NFA):
     def __init__(self, states: set[str], alphabet: set[str], start: str, final_states: set[str], transitions: dict) -> None:

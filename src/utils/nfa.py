@@ -1,4 +1,4 @@
-import Automata
+from automata import Automata
 
 class NFA(Automata):
 
